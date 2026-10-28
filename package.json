@@ -1,0 +1,33 @@
+{
+  "name": "hackerembassy",
+  "version": "1.0.0",
+  "description": "Hacker Embassy Site",
+  "main": "index.js",
+  "scripts": {
+    "start": "servor . index.html 8080 --reload --browse",
+    "start:ci": "servor . index.html 8080",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start:ci http://localhost:8080 cy:run",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackerembassy/hackerembassy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackerembassy/hackerembassy/issues"
+  },
+  "homepage": "https://github.com/hackerembassy/hackerembassy#readme",
+  "devDependencies": {
+    "cypress": "^16.2.0",
+    "husky": "^9.1.7",
+    "servor": "^4.0.2",
+    "start-server-and-test": "^3.0.13"
+  },
+  "allowScripts": {
+    "cypress": true
+  }
+}

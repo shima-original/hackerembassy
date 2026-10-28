@@ -1,128 +1,248 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name = "viewport" content = "width = device - width, initial-scale = 1.0, shrink-to-fit = no">
-            <link rel = 'stylesheet' href="styles.css"> 
-        </head>
-        <body>
-            <!-- header с фиксированной позицией -->
-            <div class = "header"> 
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                </ul>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = device - width, initial-scale = 1.0, shrink-to-fit = no">
+  <title>Hacker Space Yerevan</title>
+  <link rel='stylesheet' href="styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#a17070">
+  <meta name="msapplication-TileColor" content="#a17070">
+  <meta name="theme-color" content="#ffffff">
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "pqc46k8s18");
+  </script>
+  <link href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet" />
+</head>
+
+<body>
+  <script type="module" src="script.js"></script>
+  <script defer src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <script defer src="Scripts/Map.js"></script>
+
+  <div id="topbar"><a href="#">user@hackem.cc: ~</a>
+    <div id="topbuttons">
+      <img id="minimize" src="/icons/minimize.svg" alt="minimize button">
+      <img id="maximize" src="/icons/maximize.svg" alt="maximize button">
+      <img id="close" src="/icons/close.svg" alt="close button">
+    </div>
+  </div>
+  <nav>
+    <ul id="nav-list">
+      <li><a href="#about">О нас</a></li>
+      <li><a href="#announces">Мероприятия</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+      <li><a href="https://lore.hackem.cc/" target="_blank">Вики</a></li>
+      <li><a id="console-button" data-cy="console-button" title="Консоль внутри консоли? Вы серьезно?">Консоль</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="promo">
+      <h1>Hacker Embassy</h1>
+      <p id="subheading" class="typed" data-period="2000"
+        data-type='[ "Ереванский хакспейс", "Без британского флага на входе, но всё ещё с хакерской теплотой внутри", "Скролль ниже, не стесняйся" ]'>
+      </p>
+    </section>
+    <section id="about">
+      <h2>О нас</h2>
+      <p>
+        Мы приехали из разных стран и городов и открыли хакспейс в Ереване.
+      </p>
+      <p>
+        Хакспейс - это пространство, где собираются единомышленники, увлеченные технологиями и творчеством.
+        Мы вместе работаем над проектами, делимся идеями и знаниями, просто общаемся.<br>
+        Здесь разные люди находят себе занятие и единомышленников.
+        Мы поддерживаем друг друга, договариваемся и общаемся на равных. <br>
+        Наша цель - развивать сообщество, чтобы каждый участник мог заниматься любимым делом вместе с другими,
+        обмениваясь опытом и помогая друг другу.
+      </p>
+      <p>
+        Хакспейс не является коммерческим проектом и существует на пожертвования участников.
+        Мы вносим свой вклад в развитие хакспейса: забота о пространстве, пожертвования, помощь в приобретении
+        оборудования.<br>
+        Если вы находитесь в Ереване, увлечены технологиями и ищете единомышленников, заходите к нам.
+      </p>
+      <h3>Что у нас есть?</h3>
+      <ul>
+        <li>3D принтеры (2 FDM и 1 SLA)</li>
+        <li>Лазерная МФУшечка</li>
+        <li>Термопринтеры для наклеек и чеков</li>
+        <li>Паяльная станция с феном</li>
+        <li>Макетные платы, радиокомпоненты и детали</li>
+        <li>ESP-шки, Arduin'ки и множество разнообразных модулей к ним</li>
+        <li>Набор ручного и электрического инструмента</li>
+        <li>Кухня со всем необходимым (иногда включая продукты)</li>
+        <li>Чай, кофе и вкусняшки</li>
+        <li>Много пуфиков</li>
+        <li>Настолки (от Манчкина до Монополии)</li>
+        <li>VR шлемы, консоли и игровой ПК</li>
+        <li>Уют и хорошее настроение</li>
+        <li>Многое другое</li>
+      </ul>
+
+      <h3>Хочешь узнать больше?</h3>
+      <ul>
+        <li><a href="https://lore.hackem.cc/" target="_blank">Посмотри в нашей вики lore.hackem.cc</a>
+        </li>
+        <li><a href="https://t.me/HackerEmbassyBot" target="_blank">Напиши в личку телеграм боту @HackerEmbassyBot</a>
+        </li>
+        <li><a href="https://t.me/hacker_embassy" target="_blank">Спроси в чатике в телеге @hacker_embassy</a></li>
+      </ul>
+    </section>
+
+    <section id="photos">
+      <h2>Фотки</h2>
+      <p id="scroll-name-placement" class="typed" data-period="999999" data-speed="500"></p>
+      <div class="slider">
+        <div class="viewport">
+          <div class="carousel-frame bordered">
+            <div class="carousel">
+              <ul class="scroll" data-cy="scroll-list">
+                <li class="scroll-item-outer" data-name="picture_from_the_english_train">
+                  <div class="scroll-item">
+                    <img src="Images/coworking.jpg" alt="picture_from_the_english_train" />
+                  </div>
+                </li>
+                <li class="scroll-item-outer" data-name="our_deck_with_instruments">
+                  <div class="scroll-item">
+                    <img src="Images/books.jpg" alt="our_deck_with_instruments" />
+                  </div>
+                </li>
+                <li class="scroll-item-outer" data-name="anette_3d_printer">
+                  <div class="scroll-item">
+                    <img src="Images/games.jpg" alt="anette_3d_printer" />
+                  </div>
+                </li>
+                <li class="scroll-item-outer" data-name="coworking_before_new_year">
+                  <div class="scroll-item">
+                    <img src="Images/guitars.jpg" alt="coworking_before_new_year" />
+                  </div>
+                </li>
+                <li class="scroll-item-outer" data-name="cozy_second_floor">
+                  <div class="scroll-item">
+                    <img src="Images/people.jpg" alt="cozy_second_floor" />
+                  </div>
+                </li>
+                <li class="scroll-item-outer" data-name="music_evenings">
+                  <div class="scroll-item">
+                    <img src="Images/print.jpg" alt="music_evenings" />
+                  </div>
+                </li>
+                <li class="scroll-item-outer" data-name="the_first_our_photo">
+                  <div class="scroll-item">
+                    <img src="Images/firstfloor.jpg" alt="the_first_our_photo" />
+                  </div>
+                </li>
+                <li class="scroll-item-outer">
+                  <div class="scroll-item">
+                    <img src="Images/secret.jpg" alt="secret" />
+                  </div>
+                </li>
+              </ul>
             </div>
-            <!--Главная-->
-            <div class="main"> 
-                <div class="first">
-                    <h1>Hacker Embassy</h1>
-                    <p>С британским флагом на входе и хакерской теплотой внутри</p>
-                </div>
-                <div class="second">
-                    <h2>Мероприятия</h2>
-                    <p>
-                        Полуоткрытые встречи каждую пятницу в 20.00
-                    </p>
-                </div>
-                <div class="third">
+          </div>
+        </div>
+        <ul class="indicators" data-cy="indicators-list">
+          <li class="indicator">
+            <button class="indicator-button" aria-pressed="true"></button>
+          </li>
+          <li class="indicator">
+            <button class="indicator-button"></button>
+          </li>
+          <li class="indicator">
+            <button class="indicator-button"></button>
+          </li>
+          <li class="indicator">
+            <button class="indicator-button"></button>
+          </li>
+          <li class="indicator">
+            <button class="indicator-button"></button>
+          </li>
+          <li class="indicator">
+            <button class="indicator-button"></button>
+          </li>
+          <li class="indicator">
+            <button class="indicator-button"></button>
+          </li>
+          <li class="indicator">
+            <button id="scroll-indicator-secret" class="indicator-button"></button>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-                    <!--Слайдер с фоточками-->
-                    <div class="slider">
+    <section id="announces">
+      <h2>Мероприятия</h2>
+      <p>
+        Полуоткрытые встречи каждую пятницу в 20.00. Знакомимся, общаемся, работаем, проектируем и.т.п.
+      </p>
+      <p>
+        Мастерклассы и презентации на различные темы от 3D печати, моделирования и пайки до нейросетей, алгоритмов
+        доказательства теорем и шибари. Время анонсируем заранее в телеграм чатике
+      </p>
+      <p>
+        Посмотреть расписание можно в нашем <a id="console-button-calendar"
+          data-cy="console-button-calendar">[календарике]</a>
+      </p>
+    </section>
 
-                      <!--  <div class="slider_wrapper">
+    <section id="contacts">
+      <h2>Где мы</h2>
+      <a class="block" href="https://t.me/hacker_embassy" target="_blank">Основной чатик t.me/hacker_embassy</a>
+      <a class="block" href="https://www.instagram.com/hackerembassy/" target="_blank">Инстаграм @hackerembassy</a>
+      <a class="block" href="https://github.com/hackerembassy/" target="_blank">GitHub github.com/hackerembassy/</a>
+      <a class="block" href="https://www.openstreetmap.org/?mlat=40.194239&mlon=44.497708#map=19/40.194239/44.497708"
+        target="_blank">Армения, Ереван, пр-т Баграмяна 60
+        (вход с улицы)</a>
+      <h3>Как нас найти</h3>
+      <p>display /home/user/images/house.jpg</p>
+      <img id="house" class="bordered" src="Images/house.jpg" loading="lazy" alt="hackerspace house">
+      <p>display /home/user/images/map.osm</p>
+      <div id="map" class="bordered">
+        <div id="ofm" style="width: 100%; height: 500px"></div>
+      </div>
+    </section>
+    <footer>
+      <div id="additional-info">
+        <p id="achievements-stats"></p><span id="refresh-button"><img src="/icons/refresh.svg" alt="refresh"></span>
+      </div>
+    </footer>
+  </main>
 
-                            <div class="slider_item">
-                                <img src="Images/prph2.jpeg">
-                            </div>
-                            <div class="slider_item">
-                                <img src="Images/prph3.jpeg">
-                            </div>
-                            <div class="slider_item">
-                                <img src="Images/laptop.jpg">
-                            </div>
-                            <div class="slider_item">
-                                <img src="Images/we.jpg">
-                            </div>
-                            <div class="slider_item">
-                                <img src="Images/prph.jpg">
-                            </div>
-                            <div class="slider_item">
-                                <img src="Images/london.jpg">
-                            </div>
+  <div id="memes">
+    <img id="bsod" class="bsod-image full-width-height" src="/Images/bsod.png" loading="lazy" alt="bsod" />
+    <img id="mobile-bsod" class="bsod-image full-width-height" src="/Images/mobile-bsod.png" loading="lazy"
+      alt="mobile-bsod" />
+    <img id="site" src="/Images/site.png" loading="lazy" alt="site" />
+    <img id="tab" src="/Images/tab.png" loading="lazy" alt="tab" />
+    <img id="screenshot" class="full-width-height" src="/Images/screenshot.jpg" loading="lazy" alt="screenshot" />
+    <div id="achievement">
+      <div class="achievement-text">
+        <p>Achievement unlocked</p>
+        <p id="achievement-placeholder"></p>
+      </div>
+      <img src="/Images/achievement.svg" loading="lazy" alt="achievement" />
+    </div>
 
-                        </div>
+    <div id="console" data-cy="console-wrapper">
+      <p>
+        Memesoft Uwuntu [Version 10.69.420]<br>
+        (c) Hacker Embassy. All rights reserved.
+      </p>
+      <div id="console-input-container">
+        <span id="pre-input" data-cy="pre-input"></span><input id="console-input" data-cy="console-input" type="text"
+          autocomplete="off">
+      </div>
+    </div>
+  </div>
+</body>
 
-                        КНОПКИ "НАЗАД" И "ВПЕРЁД"
-                        <a class="slider_control slider_control_left" href="#" role="button"></a>
-                        <a class="slider_control slider_control_right slider_control_show" href="#" role="button"></a>
-                    
-                    </div> -->
-                        
-                      <div class="viewport">
-                        <div class="carousel-frame">
-                          <div class="carousel">
-                            <ul class="scroll">
-                              <li class="scroll-item-outer">
-                                <div class="scroll-item">
-                                  <img src="Images/prph2.jpeg"/>
-                                </div>
-                              </li>
-                              <li class="scroll-item-outer">
-                                <div class="scroll-item">
-                                  <img src="Images/prph3.jpeg"/>
-                                </div>
-                              </li>
-                              <li class="scroll-item-outer">
-                                <div class="scroll-item">
-                                  <img src="Images/laptop.jpg"/>
-                                </div>
-                              </li>
-                              <li class="scroll-item-outer">
-                                <div class="scroll-item">
-                                  <img src="Images/we.jpg"/>
-                                </div>
-                              </li>
-                              <li class="scroll-item-outer">
-                                <div class="scroll-item">
-                                  <img src="Images/prph.jpg"/>
-                                </div>
-                              </li>
-                              <li class="scroll-item-outer">
-                                <div class="scroll-item">
-                                  <img src="Images/london.jpg"/>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <ul class="indicators">
-                        <li class="indicator">
-                          <button class="indicator-button" aria-pressed="true"></button>
-                        </li>
-                        <li class="indicator">
-                          <button class="indicator-button"></button>
-                        </li>
-                        <li class="indicator">
-                          <button class="indicator-button"></button>
-                        </li>
-                        <li class="indicator">
-                          <button class="indicator-button"></button>
-                        </li>
-                        <li class="indicator">
-                          <button class="indicator-button"></button>
-                        </li>
-                        <li class="indicator">
-                          <button class="indicator-button"></button>
-                        </li>
-                      </ul> 
-                    <!--Конец слайдера-->
-                </div>
-            </div>
-
-            <script src="script.js"></script>
-
-        </body>
-    </html>
+</html>
